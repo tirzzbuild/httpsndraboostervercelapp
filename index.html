@@ -1,0 +1,13 @@
+<!doctype html><html><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><meta name="theme-color" content="#08080b"><title>NDRAZY BOOSTER</title><link rel="manifest" href="manifest.json"><link rel="stylesheet" href="style.css"></head><body>
+<div id="splash"><img src="assets/logo.png"><b>NDRAZY <i>BOOSTER</i></b><div class="bar"><span id="bar"></span></div><small id="pct">INITIALIZING 0%</small></div>
+<div id="auth" class="hide"><img class="alogo" src="assets/logo.png"><h1>NDRAZY <i>BOOSTER</i></h1><p>NEXT LEVEL GAMING CONTROL</p><div class="tabs"><button id="lt">LOGIN</button><button id="rt">DAFTAR</button></div>
+<form id="login"><input id="lu" placeholder="Username" required><input id="lp" type="password" placeholder="Password" required><button>MASUK KE BOOSTER</button></form>
+<form id="reg" class="hide"><input id="ru" placeholder="Username" required><input id="rp" type="password" placeholder="Password" required><input id="rp2" type="password" placeholder="Konfirmasi password" required><button>BUAT AKUN</button></form></div>
+<div id="home" class="hide"><header><img src="assets/logo.png"><b>NDRAZY<small>BOOSTER</small></b><button id="prof">●</button></header><main>
+<section class="hero"><small>WELCOME BACK</small><h2 id="hello">PLAYER</h2><span>● ONLINE</span></section>
+<div class="stats"><div>CPU<strong id="cpu">32%</strong></div><div>RAM<strong id="ram">2.8 GB</strong></div><div>TEMP<strong id="temp">39°C</strong></div></div>
+<button id="boost" class="boost"><strong>BOOST GAME</strong><small>OPTIMIZE PERFORMANCE</small><em>›</em></button>
+<h3>GAME CENTER <button onclick="page('games')">VIEW ALL</button></h3><div class="games"><button onclick="page('games')"><b>ML</b>Mobile Legends</button><button onclick="page('games')"><b>P</b>PUBG Mobile</button><button onclick="page('games')"><b>F</b>Free Fire</button></div>
+<h3>PERFORMANCE TOOLS</h3><div class="tools"><button onclick="page('monitor')"><b>MONITOR</b><small>CPU • RAM • TEMP</small></button><button onclick="page('overlay')"><b>OVERLAY</b><small>FLOATING CONTROL</small></button><button onclick="page('mode')"><b>GAME MODE</b><small>PERFORMANCE PROFILE</small></button><button onclick="page('settings')"><b>SETTINGS</b><small>APP CONFIGURATION</small></button></div></main>
+<nav><button onclick="show('home')">HOME</button><button onclick="page('games')">GAMES</button><button onclick="page('monitor')">MONITOR</button><button onclick="page('settings')">SETTINGS</button></nav></div>
+<div id="page" class="hide"><header><button onclick="show('home')" class="back">‹</button><b id="pt">NDRAZY</b></header><main id="pc"></main></div><div id="toast"></div><script src="app.js"></script></body></html>

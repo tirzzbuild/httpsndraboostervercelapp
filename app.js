@@ -1,0 +1,15 @@
+const $=x=>document.querySelector(x);function show(id){['splash','auth','home','page'].forEach(x=>$('#'+x).classList.toggle('hide',x!=id))}
+let n=0;let t=setInterval(()=>{n+=5;$('#bar').style.width=n+'%';$('#pct').textContent='INITIALIZING '+n+'%';if(n>=100){clearInterval(t);show(localStorage.ndrazy?'home':'auth');if(localStorage.ndrazy)$('#hello').textContent=localStorage.ndrazy.toUpperCase()}},70);
+$('#lt').onclick=()=>{$('#login').classList.remove('hide');$('#reg').classList.add('hide')};$('#rt').onclick=()=>{$('#reg').classList.remove('hide');$('#login').classList.add('hide')};
+$('#login').onsubmit=e=>{e.preventDefault();localStorage.ndrazy=$('#lu').value;$('#hello').textContent=localStorage.ndrazy.toUpperCase();show('home')};
+$('#reg').onsubmit=e=>{e.preventDefault();if($('#rp').value!=$('#rp2').value)return toast('Password tidak sama');localStorage.ndrazy=$('#ru').value;$('#hello').textContent=localStorage.ndrazy.toUpperCase();show('home')};
+$('#boost').onclick=()=>{toast('BOOST MODE DIAKTIFKAN');$('#cpu').textContent='18%';$('#ram').textContent='2.4 GB';$('#temp').textContent='38°C'};
+function toast(x){$('#toast').textContent=x;$('#toast').style.display='block';setTimeout(()=>$('#toast').style.display='none',1800)}
+function page(x){let title={games:'GAME CENTER',monitor:'SYSTEM MONITOR',overlay:'FLOATING OVERLAY',mode:'GAME MODE',settings:'SETTINGS'}[x];$('#pt').textContent=title;let h='<h2>'+title+'</h2>';
+if(x=='games')h+='<div class="panel"><div class="row">Mobile Legends <b>READY</b></div><div class="row">PUBG Mobile <b>READY</b></div><div class="row">Free Fire <b>READY</b></div><div class="row">Honor of Kings <b>READY</b></div><div class="row">Genshin Impact <b>READY</b></div></div>';
+if(x=='monitor')h+='<div class="panel"><div class="row">CPU <b>24%</b></div><div class="row">RAM <b>2.4 GB</b></div><div class="row">TEMPERATURE <b>38°C</b></div><div class="row">BATTERY <b>82%</b></div><div class="row">NETWORK <b>STABLE</b></div></div>';
+if(x=='overlay')h+='<div class="panel"><div class="row">FPS Counter <b>ON</b></div><div class="row">CPU / RAM <b>ON</b></div><div class="row">Quick Boost <b>ON</b></div></div><button class="primary" onclick="toast(\'Native overlay perlu permission Android\')">ACTIVATE OVERLAY</button>';
+if(x=='mode')h+='<div class="panel"><div class="row">Performance Mode <b>ON</b></div><div class="row">Touch Response <b>ON</b></div><div class="row">Network Priority <b>ON</b></div><div class="row">Background Limit <b>ON</b></div></div><button class="primary" onclick="toast(\'PROFILE APPLIED\')">APPLY PROFILE</button>';
+if(x=='settings')h+='<div class="panel"><div class="row">Notifications <b>ON</b></div><div class="row">Auto Boost <b>OFF</b></div><div class="row">Dark Theme <b>ON</b></div></div><button class="primary" onclick="localStorage.removeItem(\'ndrazy\');location.reload()">LOGOUT</button>';
+$('#pc').innerHTML=h;show('page')}
+$('#prof').onclick=()=>page('settings');

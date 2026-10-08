@@ -1,0 +1,1 @@
+NDRAZY BOOSTER Web APK package. Wrap index.html with a Web-to-APK builder. Native Android permissions such as overlay require wrapper support.
